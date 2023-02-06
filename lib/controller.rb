@@ -1,9 +1,11 @@
 require 'gossip'
 
 class ApplicationController < Sinatra::Base
+  attr_accessor :content, :author, :gossips
+
 
   get '/' do
-    erb :index
+    erb :index, locals: {gossips: Gossip.all}
   end
 
   get '/gossips/new/' do

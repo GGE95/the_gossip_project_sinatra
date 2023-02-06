@@ -3,7 +3,7 @@ require 'pry'
 
 class Gossip
   @@file_path = File.join(File.dirname(__FILE__), "../db/gossip.csv")
-  attr_accessor :content, :author
+  attr_accessor :content, :author, :all_gossips
 
   def initialize (author, content)
     @author = author
@@ -26,4 +26,4 @@ class Gossip
 
 end
 
-#binding.pry
+# binding.pry
