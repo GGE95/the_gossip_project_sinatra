@@ -6,3 +6,5 @@ gem 'json'
 gem 'sinatra'
 
 gem "shotgun", "~> 0.9.2"
+
+gem "csv", "~> 3.2"
