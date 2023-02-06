@@ -10,12 +10,14 @@ class Gossip
     @content = content
   end
 
+  #sauvegarde de gossip
   def save
     CSV.open(@@file_path,"a+") do |csv|
       csv << [@author, @content]
     end
   end
 
+  #va chercher tous les gossips
   def self.all
     all_gossips = []
     CSV.foreach(@@file_path) do |ligne|
@@ -24,6 +26,7 @@ class Gossip
     return all_gossips
   end
 
+  #va chercher un gossip
   def find (id)
     all_gossips_2 = []
     CSV.foreach(@@file_path) do |ligne|
@@ -33,5 +36,3 @@ class Gossip
   end
 
 end
-
-# binding.pry
