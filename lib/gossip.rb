@@ -16,6 +16,14 @@ class Gossip
     end
   end
 
+  def self.all
+    all_gossips = []
+    CSV.foreach(@@file_path) do |ligne|
+    all_gossips << Gossip.new(ligne[0],ligne[1])
+    end
+    return all_gossips
+  end
+
 end
 
 #binding.pry
