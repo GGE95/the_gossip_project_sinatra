@@ -27,7 +27,7 @@ class Gossip
   end
 
   #va chercher un gossip
-  def find (id)
+  def self.find (id)
     all_gossips_2 = []
     CSV.foreach(@@file_path) do |ligne|
     all_gossips_2 << Gossip.new(ligne[0],ligne[1])
